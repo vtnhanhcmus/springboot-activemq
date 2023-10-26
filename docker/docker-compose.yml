@@ -1,0 +1,27 @@
+version: '3'
+services:
+  activemq:
+    image: rmohr/activemq
+    container_name: activemq
+    ports:
+      - "8161:8161" # Web console
+      - "61616:61616" # OpenWire protocol
+
+    volumes:
+      - ./conf:/var/lib/activemq/conf
+      - ./data:/var/lib/activemq/data
+    environment:
+      ACTIVEMQ_NAME: mybroker
+      ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: 'true'
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
+
+#  spring-boot-app:
+#    build: .
+#    ports:
+#      - "8080:8080"     # Spring Boot Application Port
+#    depends_on:
+#      - activemq
+
+networks:
+  activemq-network:

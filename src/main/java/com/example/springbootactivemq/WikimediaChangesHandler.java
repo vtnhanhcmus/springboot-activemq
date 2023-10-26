@@ -34,7 +34,7 @@ public class WikimediaChangesHandler implements EventHandler {
 
     @Override
     public void onMessage(String s, MessageEvent messageEvent){
-        LOGGER.info(String.format("event data -> %s", messageEvent.getData()));
+//        LOGGER.info(String.format("event data -> %s", messageEvent.getData()));
 
         try {
             TimeUnit.SECONDS.sleep(1);
