@@ -37,7 +37,7 @@ public class WikimediaChangesHandler implements EventHandler {
 //        LOGGER.info(String.format("event data -> %s", messageEvent.getData()));
 
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

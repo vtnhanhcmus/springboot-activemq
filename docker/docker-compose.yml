@@ -6,7 +6,6 @@ services:
     ports:
       - "8161:8161" # Web console
       - "61616:61616" # OpenWire protocol
-
     volumes:
       - ./conf:/var/lib/activemq/conf
       - ./data:/var/lib/activemq/data
@@ -15,6 +14,16 @@ services:
       ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: 'true'
       ACTIVEMQ_ADMIN_LOGIN: admin
       ACTIVEMQ_ADMIN_PASSWORD: admin
+    networks:
+      activemq-network:
+
+  cassandra:
+    image: cassandra:4.0.7
+    container_name: my-cassandra-container
+    ports:
+      - "9042:9042"
+    volumes:
+      - ./data:/bitnami/cassandra/data
 
 #  spring-boot-app:
 #    build: .
@@ -25,3 +34,5 @@ services:
 
 networks:
   activemq-network:
+volumes:
+  cassandra_data: {}
