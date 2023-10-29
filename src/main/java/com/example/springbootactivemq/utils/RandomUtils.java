@@ -1,4 +1,4 @@
-package com.example.springbootactivemq;
+package com.example.springbootactivemq.utils;
 
 import java.util.Random;
 

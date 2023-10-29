@@ -1,6 +1,6 @@
 package com.example.springbootactivemq.services.producers;
 
-import com.example.springbootactivemq.WikimediaChangesHandler;
+import com.example.springbootactivemq.services.WikimediaChangesHandler;
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +23,7 @@ public class JmsProducer implements CommandLineRunner {
         sendMessage();
     }
 
-    public void sendMessage() throws InterruptedException {
+    public void sendMessage() {
 
         EventHandler eventHandler = new WikimediaChangesHandler(jmsTemplate);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";

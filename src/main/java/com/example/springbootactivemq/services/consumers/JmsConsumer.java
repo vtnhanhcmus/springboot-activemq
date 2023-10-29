@@ -1,12 +1,10 @@
 package com.example.springbootactivemq.services.consumers;
 
-import com.example.springbootactivemq.RandomUtils;
 import com.example.springbootactivemq.entities.WikiData;
 import com.example.springbootactivemq.repositories.WikiDataRepository;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
